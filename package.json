@@ -1,0 +1,16 @@
+{
+  "name": "krishi-setu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+
+  "workspaces": [
+    "app/*",
+    "worker/*",
+    "packages/*"
+  ],
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
