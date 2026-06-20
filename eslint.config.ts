@@ -3,11 +3,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: [
-      'eslint.config.ts',
-      'node_modules/**',
-      '**/dist/**'
-    ]
+    ignores: ['eslint.config.ts', 'node_modules/**', '**/dist/**'],
   },
 
   eslint.configs.recommended,
@@ -16,12 +12,12 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        project: true
-      }
+        project: true,
+      },
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/no-unsafe-assignment': 'error'
-    }
-  }
+      '@typescript-eslint/no-unsafe-assignment': 'error',
+    },
+  },
 );
