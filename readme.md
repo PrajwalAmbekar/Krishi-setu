@@ -271,7 +271,7 @@ npm run format
 ## Check Formatting
 
 ```bash
-npm run format:check
+npm run format-check
 ```
 
 ## Run API (Development)
@@ -288,7 +288,7 @@ Before every commit:
 
 ```bash
 npm run lint
-npm run format:check
+npm run format-check
 npx tsc --noEmit
 ```
 
