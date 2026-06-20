@@ -1,105 +1,166 @@
 # 🌾 Krishi-Setu
 
-A backend-first agricultural marketplace platform designed to connect farmers, buyers, and logistics providers through scalable, production-grade distributed systems.
-
-> Current Status: Foundation Setup (Day 1)
+A backend-first agricultural marketplace platform built to learn and implement modern backend engineering, scalable architectures, distributed systems, and production-grade development practices.
 
 ---
 
-## Overview
+# Project Status
 
-Krishi-Setu is being built as a modern backend engineering project focused on:
+**Phase:** Foundation Setup
 
-* Scalable API architecture
-* Distributed systems concepts
-* Type-safe development
-* Production-grade configuration management
-* Shared packages through a monorepo architecture
-* Future microservices and worker-based processing
+Current focus:
 
-The project follows engineering practices commonly used by companies such as Stripe, Linear, and Shopify.
+* Monorepo Architecture
+* TypeScript Strict Mode
+* ESLint & Prettier
+* Environment Validation
+* Development Tooling
 
 ---
 
-## Architecture
-
-### Monorepo Structure
+# Repository Structure
 
 ```text
 krishi-setu/
-├── package.json
-├── tsconfig.base.json
-├── eslint.config.ts
-├── .prettierrc
+│
+├── app/
+│   └── api/
+│       ├── src/
+│       │   ├── config/
+│       │   │   └── env.ts
+│       │   └── index.ts
+│       │
+│       ├── package.json
+│       └── tsconfig.json
+│
+├── packages/
+│   └── shared/
+│       ├── src/
+│       │   └── index.ts
+│       │
+│       ├── package.json
+│       └── tsconfig.json
+│
+├── worker/
+│   └── match-worker/
+│       ├── src/
+│       └── package.json
+│
+├── .env
 ├── .env.example
 ├── .gitignore
-│
-├── apps/
-│   └── api/
-│       ├── package.json
-│       ├── tsconfig.json
-│       └── src/
-│           ├── index.ts
-│           └── config/
-│               └── env.ts
-│
-├── workers/
-│   └── match-worker/
-│
-└── packages/
-    └── shared/
-        ├── package.json
-        ├── tsconfig.json
-        └── src/
-            └── index.ts
+├── .prettierrc
+├── eslint.config.ts
+├── package.json
+├── package-lock.json
+├── readme.md
+├── tsconfig.base.json
+└── tsconfig.json
 ```
 
 ---
 
-## Technology Stack
+# Architecture Overview
 
-### Runtime
+Krishi-Setu follows a monorepo architecture using npm workspaces.
+
+### API Layer
+
+Location:
+
+```text
+app/api
+```
+
+Responsibilities:
+
+* HTTP APIs
+* Authentication
+* Business Logic
+* Database Access
+* Redis Integration
+* External Services
+
+---
+
+### Shared Package
+
+Location:
+
+```text
+packages/shared
+```
+
+Responsibilities:
+
+* Shared Types
+* Utility Functions
+* Constants
+* Reusable Schemas
+
+---
+
+### Worker Services
+
+Location:
+
+```text
+worker/match-worker
+```
+
+Responsibilities:
+
+* Background Jobs
+* Queue Processing
+* Matching Algorithms
+* Scheduled Tasks
+
+---
+
+# Technology Stack
+
+## Runtime
 
 * Node.js
 * TypeScript
 * ESM Modules
 
-### Code Quality
+## Development
+
+* npm Workspaces
+* tsx
+
+## Configuration
+
+* dotenv
+* Zod
+
+## Code Quality
 
 * ESLint v9
 * TypeScript ESLint
 * Prettier
 
-### Configuration
-
-* dotenv
-* Zod
-
-### Development Tooling
-
-* npm Workspaces
-* tsx
-
 ---
 
-## Engineering Decisions
+# Engineering Decisions
 
-### 1. Monorepo Architecture
+## Monorepo
 
-The project uses npm workspaces to manage multiple applications and packages from a single repository.
+All services live in a single repository.
 
 Benefits:
 
-* Shared types across services
-* Shared utilities
-* Centralized tooling
-* Easier scaling to microservices
+* Shared tooling
+* Shared types
+* Easier dependency management
+* Better developer experience
 
 ---
 
-### 2. TypeScript Strict Mode
+## TypeScript Strict Mode
 
-TypeScript is configured with strict settings:
+Enabled:
 
 ```json
 {
@@ -112,13 +173,13 @@ TypeScript is configured with strict settings:
 
 Benefits:
 
-* Earlier bug detection
-* Better maintainability
+* Fewer runtime bugs
 * Safer refactoring
+* Better maintainability
 
 ---
 
-### 3. Zero-Any Policy
+## Zero-Any Policy
 
 The codebase enforces:
 
@@ -126,31 +187,31 @@ The codebase enforces:
 @typescript-eslint/no-explicit-any
 ```
 
-No explicit `any` types are allowed.
+Explicit `any` types are prohibited.
 
 Benefits:
 
 * Strong type safety
-* Better IDE support
-* Reduced runtime errors
+* Better IntelliSense
+* Reduced technical debt
 
 ---
 
-### 4. Environment Validation
+## Environment Validation
 
-All environment variables are validated at startup using Zod.
+Environment variables are validated using Zod before application startup.
 
 Benefits:
 
-* Fail fast on misconfiguration
-* Clear error messages
-* Consistent environments
+* Fail-fast configuration
+* Safer deployments
+* Clear startup errors
 
 ---
 
-### 5. ESM-First Development
+## ESM-First Development
 
-The project uses:
+The repository uses:
 
 ```json
 {
@@ -161,58 +222,14 @@ The project uses:
 Benefits:
 
 * Modern JavaScript standards
-* Better interoperability
 * Future-proof architecture
+* Better ecosystem compatibility
 
 ---
 
-## Development Commands
+# Environment Variables
 
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Type Check
-
-```bash
-npx tsc --noEmit
-```
-
-### Lint
-
-```bash
-npm run lint
-```
-
-### Format
-
-```bash
-npm run format
-```
-
-### Check Formatting
-
-```bash
-npm run format:check
-```
-
-### Run API
-
-```bash
-npx tsx apps/api/src/index.ts
-```
-
----
-
-## Environment Setup
-
-Copy:
-
-```bash
-cp .env.example .env
-```
+Create a `.env` file from `.env.example`.
 
 Required variables:
 
@@ -225,7 +242,47 @@ REDIS_URL=redis://localhost:6379
 
 ---
 
-## Quality Gates
+# Development Commands
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Type Checking
+
+```bash
+npx tsc --noEmit
+```
+
+## Linting
+
+```bash
+npm run lint
+```
+
+## Format Code
+
+```bash
+npm run format
+```
+
+## Check Formatting
+
+```bash
+npm run format:check
+```
+
+## Run API (Development)
+
+```bash
+npx tsx app/api/src/index.ts
+```
+
+---
+
+# Quality Gates
 
 Before every commit:
 
@@ -239,32 +296,40 @@ All commands must pass successfully.
 
 ---
 
-## Current Progress
+# Current Progress
 
-### Completed
+## Completed
 
-* Git Repository Initialization
-* npm Workspaces Setup
+* Git Repository Setup
+* npm Workspace Configuration
 * Monorepo Structure
 * TypeScript Configuration
 * ESLint Configuration
 * Prettier Configuration
-* Environment Validation with Zod
-* Development Tooling Setup
+* Zod Environment Validation
+* tsx Development Runtime
 
-### Upcoming
+## Next Milestones
 
-* Express Server
+* Express Server Setup
+* Global Error Handling
 * Request Validation
-* Error Handling Middleware
 * PostgreSQL Integration
 * Redis Integration
 * Authentication System
+* Queue Processing
 * Domain Modules
-* Background Workers
 
 ---
 
-## Vision
+# Vision
 
-Build a production-grade agricultural marketplace platform while learning modern backend engineering, distributed systems, and scalable architecture through hands-on implementation.
+Krishi-Setu is a long-term backend engineering project focused on learning and implementing:
+
+* Backend Architecture
+* Distributed Systems
+* Event-Driven Design
+* Scalability Patterns
+* Production-Grade Development Practices
+
+while solving real-world agricultural marketplace problems.

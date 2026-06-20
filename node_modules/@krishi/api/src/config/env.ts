@@ -4,7 +4,7 @@ import {config} from 'dotenv';
 config();
 
 const envSchema = z.object({
-    PORT: z.string().default('3000'),
+    PORT: z.string().transform(Number).default(3000),
     NODE_ENV: z.enum(['development','production','test']),
 })
 
