@@ -10,11 +10,11 @@ A backend-first agricultural marketplace platform built to learn and implement m
 
 Current focus:
 
-* Monorepo Architecture
-* TypeScript Strict Mode
-* ESLint & Prettier
-* Environment Validation
-* Development Tooling
+- Monorepo Architecture
+- TypeScript Strict Mode
+- ESLint & Prettier
+- Environment Validation
+- Development Tooling
 
 ---
 
@@ -74,12 +74,12 @@ app/api
 
 Responsibilities:
 
-* HTTP APIs
-* Authentication
-* Business Logic
-* Database Access
-* Redis Integration
-* External Services
+- HTTP APIs
+- Authentication
+- Business Logic
+- Database Access
+- Redis Integration
+- External Services
 
 ---
 
@@ -93,10 +93,10 @@ packages/shared
 
 Responsibilities:
 
-* Shared Types
-* Utility Functions
-* Constants
-* Reusable Schemas
+- Shared Types
+- Utility Functions
+- Constants
+- Reusable Schemas
 
 ---
 
@@ -110,10 +110,10 @@ worker/match-worker
 
 Responsibilities:
 
-* Background Jobs
-* Queue Processing
-* Matching Algorithms
-* Scheduled Tasks
+- Background Jobs
+- Queue Processing
+- Matching Algorithms
+- Scheduled Tasks
 
 ---
 
@@ -121,25 +121,25 @@ Responsibilities:
 
 ## Runtime
 
-* Node.js
-* TypeScript
-* ESM Modules
+- Node.js
+- TypeScript
+- ESM Modules
 
 ## Development
 
-* npm Workspaces
-* tsx
+- npm Workspaces
+- tsx
 
 ## Configuration
 
-* dotenv
-* Zod
+- dotenv
+- Zod
 
 ## Code Quality
 
-* ESLint v9
-* TypeScript ESLint
-* Prettier
+- ESLint v9
+- TypeScript ESLint
+- Prettier
 
 ---
 
@@ -151,10 +151,10 @@ All services live in a single repository.
 
 Benefits:
 
-* Shared tooling
-* Shared types
-* Easier dependency management
-* Better developer experience
+- Shared tooling
+- Shared types
+- Easier dependency management
+- Better developer experience
 
 ---
 
@@ -173,9 +173,9 @@ Enabled:
 
 Benefits:
 
-* Fewer runtime bugs
-* Safer refactoring
-* Better maintainability
+- Fewer runtime bugs
+- Safer refactoring
+- Better maintainability
 
 ---
 
@@ -191,9 +191,9 @@ Explicit `any` types are prohibited.
 
 Benefits:
 
-* Strong type safety
-* Better IntelliSense
-* Reduced technical debt
+- Strong type safety
+- Better IntelliSense
+- Reduced technical debt
 
 ---
 
@@ -203,9 +203,9 @@ Environment variables are validated using Zod before application startup.
 
 Benefits:
 
-* Fail-fast configuration
-* Safer deployments
-* Clear startup errors
+- Fail-fast configuration
+- Safer deployments
+- Clear startup errors
 
 ---
 
@@ -221,9 +221,9 @@ The repository uses:
 
 Benefits:
 
-* Modern JavaScript standards
-* Future-proof architecture
-* Better ecosystem compatibility
+- Modern JavaScript standards
+- Future-proof architecture
+- Better ecosystem compatibility
 
 ---
 
@@ -300,25 +300,25 @@ All commands must pass successfully.
 
 ## Completed
 
-* Git Repository Setup
-* npm Workspace Configuration
-* Monorepo Structure
-* TypeScript Configuration
-* ESLint Configuration
-* Prettier Configuration
-* Zod Environment Validation
-* tsx Development Runtime
+- Git Repository Setup
+- npm Workspace Configuration
+- Monorepo Structure
+- TypeScript Configuration
+- ESLint Configuration
+- Prettier Configuration
+- Zod Environment Validation
+- tsx Development Runtime
 
 ## Next Milestones
 
-* Express Server Setup
-* Global Error Handling
-* Request Validation
-* PostgreSQL Integration
-* Redis Integration
-* Authentication System
-* Queue Processing
-* Domain Modules
+- Express Server Setup
+- Global Error Handling
+- Request Validation
+- PostgreSQL Integration
+- Redis Integration
+- Authentication System
+- Queue Processing
+- Domain Modules
 
 ---
 
@@ -326,10 +326,10 @@ All commands must pass successfully.
 
 Krishi-Setu is a long-term backend engineering project focused on learning and implementing:
 
-* Backend Architecture
-* Distributed Systems
-* Event-Driven Design
-* Scalability Patterns
-* Production-Grade Development Practices
+- Backend Architecture
+- Distributed Systems
+- Event-Driven Design
+- Scalability Patterns
+- Production-Grade Development Practices
 
 while solving real-world agricultural marketplace problems.
