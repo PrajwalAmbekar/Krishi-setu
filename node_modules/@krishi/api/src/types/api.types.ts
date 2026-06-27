@@ -20,7 +20,10 @@ interface ApiPaginationResponse<T> extends ApiResponse<T> {
     totalPages: number;
   };
 }
-
+export interface ApiError {
+  statusCode: number;
+  message: string;
+}
 function createApiResponse<T>(data: T, message?: string): ApiResponse<T> {
   return {
     success: true,
@@ -42,3 +45,5 @@ function createApiErrorResponse(
     message,
   };
 }
+
+export default { createApiResponse, createApiErrorResponse };

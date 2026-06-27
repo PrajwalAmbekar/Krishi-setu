@@ -4,6 +4,13 @@
   "private": true,
   "type": "module",
   "main": "src/index.ts",
+"scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -b",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src"
+  },
   "dependencies": {
     "dotenv": "^17.4.2",
     "zod": "^4.4.3"

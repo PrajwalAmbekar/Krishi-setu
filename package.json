@@ -8,13 +8,16 @@
     "worker/*",
     "packages/*"
   ],
-  "scripts": {
+"scripts": {
+    "dev": "npm run dev --workspace=@krishi/api",
+    "dev:api": "npm run dev --workspace=@krishi/api",
+    "dev:worker": "npm run dev --workspace=@krishi/match-worker",
+    "build": "tsc -b",
+    "typecheck": "tsc -b --noEmit",
+    "typecheck:workspaces": "npm run typecheck --workspaces",
+    "lint": "npm run lint --workspaces",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .ts",
-    "typecheck": "tsc --noEmit",   
-    "dev": "tsx watch src/index.ts",  
     "format:check": "prettier --check ."
-    
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
